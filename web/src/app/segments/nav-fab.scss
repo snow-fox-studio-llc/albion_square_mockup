@@ -1,0 +1,10 @@
+#nav-fab {
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+    z-index: 101;
+
+    @media screen and (min-width: 1408px) {
+        display: none;
+    }
+}

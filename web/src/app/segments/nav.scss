@@ -1,0 +1,67 @@
+#nav {
+	background-color: whitesmoke;
+
+	.block:first-of-type {
+		figure {
+			height: 2rem;
+			background: url("https://albionsquare.nyc3.cdn.digitaloceanspaces.com/media/albionsquare-full-light.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+		}
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		background-color: #0f1011;
+
+		.block:first-of-type {
+			figure {
+				background: url("https://albionsquare.nyc3.cdn.digitaloceanspaces.com/media/albionsquare-full-dark.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+		}
+	}
+
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+
+	padding: 3rem 2rem 6rem 2rem;
+	overflow-y: auto;
+
+	display: flex;
+	flex-direction: column;
+
+	&.cm-is-hidden {
+		display: none;
+	}
+
+	.block:first-child {
+		margin-top: auto;
+	}
+
+	@media screen and (min-width: 1408px) {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: auto;
+		width: 16vw;
+		z-index: auto;
+
+		padding: 3rem 2rem;
+
+		display: block;
+
+		&.cm-is-hidden {
+			display: block;
+		}
+
+		.block:first-child {
+			margin-top: 0;
+		}
+	}
+}

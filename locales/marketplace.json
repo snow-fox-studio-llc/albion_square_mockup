@@ -1,0 +1,48 @@
+{
+	"itemTextInput": {
+		"en": "Search item",
+		"de": "Search item",
+		"fr": "Search item",
+		"ru": "Search item",
+		"pl": "Search item",
+		"es": "Search item",
+		"pt": "Search item",
+		"zh": "Search item",
+		"ko": "Search item"
+	},
+	"tableHeadings": {
+		"item": {
+			"en": "Item",
+			"de": "Item",
+			"fr": "Item",
+			"ru": "Item",
+			"pl": "Item",
+			"es": "Item",
+			"pt": "Item",
+			"zh": "Item",
+			"ko": "Item"
+		},
+		"sellOrderMin": {
+			"en": "Sell Order Min",
+			"de": "Sell Order Min",
+			"fr": "Sell Order Min",
+			"ru": "Sell Order Min",
+			"pl": "Sell Order Min",
+			"es": "Sell Order Min",
+			"pt": "Sell Order Min",
+			"zh": "Sell Order Min",
+			"ko": "Sell Order Min"
+		},
+		"buyOrderMax": {
+			"en": "Buy Order Max",
+			"de": "Buy Order Max",
+			"fr": "Buy Order Max",
+			"ru": "Buy Order Max",
+			"pl": "Buy Order Max",
+			"es": "Buy Order Max",
+			"pt": "Buy Order Max",
+			"zh": "Buy Order Max",
+			"ko": "Buy Order Max"
+		}
+	}
+}

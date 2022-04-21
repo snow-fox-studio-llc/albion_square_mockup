@@ -1,0 +1,12 @@
+#modal {
+	.modal-background {
+		background-color: rgba(whitesmoke, 0.86);
+	}
+	@media screen and (prefers-color-scheme: dark) {
+		.modal-background {
+			background-color: rgba(#0f1011, 0.86);
+		}
+	}
+
+	z-index: 140;
+}

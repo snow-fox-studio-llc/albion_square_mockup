@@ -1,0 +1,20 @@
+import TimeAgo from "javascript-time-ago";
+import de from "javascript-time-ago/locale/de.json";
+import en from "javascript-time-ago/locale/en.json";
+import es from "javascript-time-ago/locale/es.json";
+import fr from "javascript-time-ago/locale/fr.json";
+import ko from "javascript-time-ago/locale/ko.json";
+import pl from "javascript-time-ago/locale/pl.json";
+import pt from "javascript-time-ago/locale/pt.json";
+import ru from "javascript-time-ago/locale/ru.json";
+import zh from "javascript-time-ago/locale/zh.json";
+
+TimeAgo.addLocale(de);
+TimeAgo.addLocale(es);
+TimeAgo.addLocale(fr);
+TimeAgo.addLocale(ko);
+TimeAgo.addLocale(pl);
+TimeAgo.addLocale(pt);
+TimeAgo.addLocale(ru);
+TimeAgo.addLocale(zh);
+TimeAgo.addDefaultLocale(en);
