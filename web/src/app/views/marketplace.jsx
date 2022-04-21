@@ -76,7 +76,12 @@ const ShopCategorySelect = ({ filters, setFilters }) => {
 					<select
 						value={filters.shopCategory}
 						onChange={(e) =>
-							setFilters({ ...filters, shopCategory: e.target.value, shopSubCategory: "", page: 0 })
+							setFilters({
+								...filters,
+								shopCategory: e.target.value,
+								shopSubCategory: "",
+								page: 0,
+							})
 						}
 					>
 						<option value="">{t("adp-marketplace:rollout.category")}</option>
@@ -102,7 +107,11 @@ const ShopSubCategorySelect = ({ filters, setFilters }) => {
 					<select
 						value={filters.shopSubCategory}
 						onChange={(e) =>
-							setFilters({ ...filters, shopSubCategory: e.target.value, page: 0 })
+							setFilters({
+								...filters,
+								shopSubCategory: e.target.value,
+								page: 0,
+							})
 						}
 					>
 						<option value="">{t("adp-marketplace:rollout.subCategory")}</option>
@@ -131,7 +140,9 @@ const TierSelect = ({ filters, setFilters }) => {
 				<span className="select is-info is-rounded is-fullwidth">
 					<select
 						value={filters.tier}
-						onChange={(e) => setFilters({ ...filters, tier: e.target.value, page: 0 })}
+						onChange={(e) =>
+							setFilters({ ...filters, tier: e.target.value, page: 0 })
+						}
 					>
 						<option value="">{t("adp-marketplace:rollout.tier")}</option>
 						{adpMarketplaceValuesJson.tier.map((el) => (
@@ -207,7 +218,7 @@ const SelectResetButton = ({ filters, setFilters }) => {
 			tier: "",
 			enchantment: "",
 			quality: "",
-			page: 0
+			page: 0,
 		});
 	};
 	return (

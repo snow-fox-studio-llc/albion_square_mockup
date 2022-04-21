@@ -5,7 +5,7 @@ import { NavFabContext } from "../utils/context.js";
 import "./nav-fab.scss";
 
 export default () => {
-    const [isActive, setIsActive] = useContext(NavFabContext);
+	const [isActive, setIsActive] = useContext(NavFabContext);
 
 	return (
 		<div id="nav-fab">

@@ -5,7 +5,7 @@ export default {
 			.join("&");
 
 		let res = null;
-		if(filters.searchString) {
+		if (filters.searchString) {
 			res = await fetch(
 				`/api/items/search${
 					Object.keys(filters).length > 0 ? "?" : ""

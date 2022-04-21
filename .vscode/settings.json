@@ -1,8 +1,8 @@
 {
-    "files.watcherExclude": {
-        "**/cache/**": true,
-        "**/dist/**": true,
-        "**/locales/**": true,
-        "**/public/**": true
-    }
+	"files.watcherExclude": {
+		"**/cache/**": true,
+		"**/dist/**": true,
+		"**/locales/**": true,
+		"**/public/**": true
+	}
 }
