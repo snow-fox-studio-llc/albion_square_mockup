@@ -4,8 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"start": "npm start -w api",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"prettier": "prettier --write \"**/*.{js,css,html,jsx,json}\""
+		"prettier": "prettier --write \"**/*.{js,css,html,jsx,json}\"",
+		"build": "npm run build -w web"
 	},
 	"author": "",
 	"license": "MIT",
