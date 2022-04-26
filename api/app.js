@@ -11,7 +11,16 @@ module.exports.start = async () => {
 	//Middleware
 	app.use(express.json());
 	app.use(morgan(":method :url :status - :response-time ms"));
-	app.use(helmet());
+	app.use(
+		helmet({
+			contentSecurityPolicy: {
+				directives: {
+					"img-src": ["'self'", "albionsquare.nyc3.cdn.digitaloceanspaces.com"],
+					"script-src": ["'self'", "plausible.io"]
+				},
+			},
+		})
+	);
 	app.use(compression());
 
 	//Static
