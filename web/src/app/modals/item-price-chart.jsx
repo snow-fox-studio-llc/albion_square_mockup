@@ -53,7 +53,7 @@ export default ({ item, city }) => {
 					<figure className="media-left">
 						<p className="image is-96x96">
 							<img
-								src={`https://albionsquare.nyc3.digitaloceanspaces.com/items/${item.uniqueName}/${item.enchantment}/${item.quality}/asset.webp`}
+								src={`https://albionsquare.nyc3.cdn.digitaloceanspaces.com/items/${item.uniqueName}/${item.enchantment}/${item.quality}/asset.webp`}
 							/>
 						</p>
 					</figure>

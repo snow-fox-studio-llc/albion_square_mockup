@@ -15,10 +15,16 @@ module.exports.start = async () => {
 		helmet({
 			contentSecurityPolicy: {
 				directives: {
-					"img-src": ["'self'", "albionsquare.nyc3.cdn.digitaloceanspaces.com"],
-					"script-src": ["'self'", "plausible.io"]
+					defaultSrc: ["'self'", "www.albion-online-data.com"],
+					"img-src": [
+						"'self'",
+						"albionsquare.nyc3.cdn.digitaloceanspaces.com",
+						"web-platforms.sfo2.cdn.digitaloceanspaces.com",
+					],
+					"script-src": ["'self'", "plausible.io"],
 				},
 			},
+			crossOriginEmbedderPolicy: false,
 		})
 	);
 	app.use(compression());
