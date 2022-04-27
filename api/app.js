@@ -15,7 +15,11 @@ module.exports.start = async () => {
 		helmet({
 			contentSecurityPolicy: {
 				directives: {
-					defaultSrc: ["'self'", "www.albion-online-data.com"],
+					"default-src": [
+						"'self'",
+						"www.albion-online-data.com",
+						"plausible.io",
+					],
 					"img-src": [
 						"'self'",
 						"albionsquare.nyc3.cdn.digitaloceanspaces.com",
