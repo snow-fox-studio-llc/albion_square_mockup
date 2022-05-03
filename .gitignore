@@ -1,4 +1,7 @@
 node_modules/
-web/cache/
-web/dist/
+
+web/.next/
+web/out/
+web/build/
+
 **/.env

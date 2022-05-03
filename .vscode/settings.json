@@ -1,8 +1,10 @@
 {
-	"files.watcherExclude": {
-		"**/cache/**": true,
-		"**/dist/**": true,
-		"**/locales/**": true,
-		"**/public/**": true
-	}
+    "files.watcherExclude": {
+        "**/.next/**": true,
+        "**/json/**": true,
+        "**/locales/**": true
+    },
+    "files.exclude": {
+        "**/node_modules/**": true
+    }
 }

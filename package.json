@@ -2,24 +2,22 @@
 	"name": "albion_square",
 	"version": "1.0.0",
 	"description": "",
-	"engines": {
-		"node": "16.x"
-	},
 	"main": "index.js",
 	"scripts": {
-		"start": "npm start -w api",
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "npm run build -w web",
+		"dev": "npm run dev -w web",
 		"prettier": "prettier --write \"**/*.{js,css,html,jsx,json}\"",
-		"build": "npm run build -w web"
+		"start": "npm start -w web"
 	},
+	"keywords": [],
 	"author": "",
-	"license": "MIT",
-	"devDependencies": {
-		"prettier": "^2.6.0"
-	},
+	"license": "GPL-3.0",
 	"workspaces": [
-		"api",
-		"scripts",
-		"web"
-	]
+		"lib",
+		"web",
+		"worker"
+	],
+	"devDependencies": {
+		"prettier": "^2.6.2"
+	}
 }
