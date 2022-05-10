@@ -5,6 +5,7 @@ import "../styles/nav.scss";
 
 function MyApp({ Component, pageProps }) {
 	const getLayout = Component.getLayout || ((page) => page);
+
 	return (
 		<Fragment>
 			<Head>

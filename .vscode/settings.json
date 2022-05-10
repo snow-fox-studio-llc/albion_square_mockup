@@ -1,10 +1,10 @@
 {
-    "files.watcherExclude": {
-        "**/.next/**": true,
-        "**/json/**": true,
-        "**/locales/**": true
-    },
-    "files.exclude": {
-        "**/node_modules/**": true
-    }
+	"files.watcherExclude": {
+		"**/.next/**": true,
+		"**/json/**": true,
+		"**/locales/**": true
+	},
+	"files.exclude": {
+		"**/node_modules/**": true
+	}
 }
