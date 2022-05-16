@@ -21,6 +21,11 @@ function MyApp({ Component, pageProps }) {
 				<link rel="preconnect" href="https://plausible.io" />
 			</Head>
 			{getLayout(<Component {...pageProps} />)}
+			<script
+				defer
+				data-domain="albionsquare.app"
+				src="https://plausible.io/js/plausible.js"
+			></script>
 		</Fragment>
 	);
 }

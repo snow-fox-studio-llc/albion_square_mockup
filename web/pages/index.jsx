@@ -179,11 +179,6 @@ export default function Home() {
 					</div>
 				</div>
 			</footer>
-			<script
-				defer
-				data-domain="albionsquare.app"
-				src="https://plausible.io/js/plausible.js"
-			></script>
 		</Fragment>
 	);
 }
