@@ -11,16 +11,6 @@ export default function Home() {
 			<Head>
 				<title>Albion Square</title>
 				<meta name="description" content="Hassle-Free Albion Assistant" />
-				<link
-					rel="preconnect"
-					href="https://albionsquare.nyc3.cdn.digitaloceanspaces.com"
-				/>
-				<link
-					rel="icon"
-					type="image/svg+xml"
-					href="https://albionsquare.nyc3.cdn.digitaloceanspaces.com/media/albionsquare-logo.svg"
-				/>
-				<link rel="preconnect" href="https://plausible.io" />
 			</Head>
 
 			<section className="hero is-info is-halfheight cm-hero">
