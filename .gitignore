@@ -1,7 +1,1 @@
 node_modules/
-
-web/.next/
-web/out/
-web/build/
-
-**/.env
