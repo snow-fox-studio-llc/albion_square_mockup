@@ -1,28 +1,28 @@
 import { Schema } from "mongoose";
 
-export interface Item {
-	uniqueName;
-	shopCategory;
-	shopSubCategory;
-	tier;
-	enchantment;
-	quality;
-	enchantments;
-	maxQuality;
-	hasAsset;
-	version;
-	en;
-	de;
-	fr;
-	ru;
-	pl;
-	es;
-	pt;
-	zh;
-	ko;
+export interface ItemInterface {
+	uniqueName: string;
+	shopCategory: string;
+	shopSubCategory: string;
+	tier: number;
+	enchantment: number;
+	quality: number;
+	enchantments: number[];
+	maxQuality: number;
+	hasAsset?: boolean;
+	version: string;
+	en: string;
+	de: string;
+	fr: string;
+	ru: string;
+	pl: string;
+	es: string;
+	pt: string;
+	zh: string;
+	ko: string;
 }
 
-export default new Schema<Item>({
+export default new Schema<ItemInterface>({
 	uniqueName: {
 		type: String,
 		required: true,
@@ -53,6 +53,14 @@ export default new Schema<Item>({
 	},
 	maxQuality: {
 		type: Number,
+		required: true,
+	},
+	hasAsset: {
+		type: Boolean,
+		default: null,
+	},
+	version: {
+		type: String,
 		required: true,
 	},
 	en: {
@@ -88,14 +96,6 @@ export default new Schema<Item>({
 		required: true,
 	},
 	ko: {
-		type: String,
-		required: true,
-	},
-	hasAsset: {
-		type: Boolean,
-		default: null,
-	},
-	version: {
 		type: String,
 		required: true,
 	},
