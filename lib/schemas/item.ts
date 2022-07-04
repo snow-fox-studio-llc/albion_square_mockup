@@ -1,28 +1,6 @@
 import { Schema } from "mongoose";
 
-export interface ItemInterface {
-	uniqueName: string;
-	shopCategory: string;
-	shopSubCategory: string;
-	tier: number;
-	enchantment: number;
-	quality: number;
-	enchantments: number[];
-	maxQuality: number;
-	hasAsset?: boolean;
-	version: string;
-	en: string;
-	de: string;
-	fr: string;
-	ru: string;
-	pl: string;
-	es: string;
-	pt: string;
-	zh: string;
-	ko: string;
-}
-
-export default new Schema<ItemInterface>({
+export default new Schema({
 	uniqueName: {
 		type: String,
 		required: true,
