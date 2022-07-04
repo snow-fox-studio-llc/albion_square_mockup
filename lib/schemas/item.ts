@@ -1,6 +1,28 @@
-const mongoose = require("mongoose");
+import { Schema } from "mongoose";
 
-module.exports = new mongoose.Schema({
+export interface Item {
+	uniqueName;
+	shopCategory;
+	shopSubCategory;
+	tier;
+	enchantment;
+	quality;
+	enchantments;
+	maxQuality;
+	hasAsset;
+	version;
+	en;
+	de;
+	fr;
+	ru;
+	pl;
+	es;
+	pt;
+	zh;
+	ko;
+}
+
+export default new Schema<Item>({
 	uniqueName: {
 		type: String,
 		required: true,
