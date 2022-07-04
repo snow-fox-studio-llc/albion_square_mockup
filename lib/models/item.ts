@@ -58,3 +58,14 @@ export const searchCount = async (query, filter) => {
 export const deleteGhosts = async (version) => {
 	return await Item.deleteMany({ version: { $ne: version } });
 };
+
+export default {
+	upsert,
+	find,
+	findCount,
+	findAll,
+	findAllCount,
+	search,
+	searchCount,
+	deleteGhosts,
+};
