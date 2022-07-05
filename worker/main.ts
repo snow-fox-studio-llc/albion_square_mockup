@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const AWS = require("aws-sdk");
 
-const adpItemModel = require("./models/adp-item.js");
-const adpLocalizationModel = require("./models/adp-localization.js");
-const asItemAssetModel = require("./models/as-item-asset.js");
+const adpItemModel = require("./models/adp-item");
+const adpLocalizationModel = require("./models/adp-localization");
+const asItemAssetModel = require("./models/as-item-asset");
 
 const app = require("./app.js");
 

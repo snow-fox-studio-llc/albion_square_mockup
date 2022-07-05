@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"work": "ts-node main.ts"
 	},
 	"keywords": [],
 	"author": "",
@@ -13,6 +14,7 @@
 		"axios": "^0.27.2",
 		"commander": "^9.3.0",
 		"dotenv": "^16.0.1",
+		"mongoose": "^6.4.2",
 		"sharp": "^0.30.7"
 	},
 	"description": "",
