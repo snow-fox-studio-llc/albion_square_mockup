@@ -7,7 +7,7 @@ export interface IItem {
 	tier?: number;
 	enchantment?: number;
 	quality?: number;
-	hasAsset?: number | null;
+	hasAsset?: boolean | null;
 	version?: string;
 	enchantments?: number[];
 	maxQuality?: number;
