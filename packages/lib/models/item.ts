@@ -3,10 +3,7 @@ import itemSchema, { IItem } from "../schemas/item.js";
 
 const Item = mongoose.model<IItem>("Item", itemSchema);
 
-export const upsert = async (
-	filter: IItem,
-	doc: IItem
-) => {
+export const upsert = async (filter: IItem, doc: IItem) => {
 	return await Item.findOneAndUpdate(filter, doc, {
 		upsert: true,
 	})
