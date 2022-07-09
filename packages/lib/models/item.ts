@@ -76,3 +76,14 @@ export const searchCount = async (query: string, filter: IItem) => {
 export const deleteGhosts = async (version: string) => {
 	return await Item.deleteMany({ version: { $ne: version } });
 };
+
+export default {
+	upsert,
+	find,
+	findCount,
+	findAll,
+	findAllCount,
+	search,
+	searchCount,
+	deleteGhosts,
+};
