@@ -1,13 +1,14 @@
 {
-	"name": "lib",
+	"name": "@albionsquare/lib",
 	"version": "1.0.0",
+	"private":"true",
 	"exports": {
 		"./*": "./dist/*.js",
 		"./package.json": "./package.json"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "rm -rf ./dist/ && tsc --project ./"
+		"build": "rm -rf ./dist/ && tsc --project ./",
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.1169.0",
