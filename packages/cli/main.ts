@@ -1,1 +1,1 @@
-import mongooseLoader from "lib/loaders/mongoose";
+import mongooseLoader from "@albionsquare/lib/loaders/mongoose";
