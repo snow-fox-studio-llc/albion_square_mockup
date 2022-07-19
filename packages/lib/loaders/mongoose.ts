@@ -5,7 +5,11 @@ export default async () => {
 		process.env.MONGO_URL || "mongodb://localhost:27017/albion_square"
 	);
 
-	if(process.env.MONGO_URL_ALT) {
+	if (process.env.MONGO_URL_ALT) {
 		await mongoose.createConnection(process.env.MONGO_URL_ALT).asPromise();
 	}
+};
+
+export const disconnect = async () => {
+	await mongoose.disconnect();
 };
