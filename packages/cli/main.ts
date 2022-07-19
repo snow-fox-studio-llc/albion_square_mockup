@@ -1,1 +1,1 @@
-import mongooseLoader from "lib/loaders/mongoose.js";
+import mongooseLoader from "lib/loaders/mongoose";

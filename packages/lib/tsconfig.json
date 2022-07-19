@@ -2,6 +2,7 @@
 	"extends": "@tsconfig/node16/tsconfig.json",
 	"compilerOptions": {
 		"outDir": "dist",
-		"declaration": true
+		"declaration": true,
+		"moduleResolution": "Node16"
 	}
 }
