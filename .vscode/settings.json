@@ -2,8 +2,7 @@
 	"files.watcherExclude": {
 		"**/.next/**": true,
 		"**/build/**": true,
-		"**/json/**": true,
-		"**/locales/**": true,
+		"**/dist/**": true,
 		"**/out/**": true
 	}
 }
