@@ -1,11 +1,13 @@
-import mongooseLoader, { disconnect as mongooseDisconnect } from "@albionsquare/lib/loaders/mongoose";
+import mongooseLoader from "@albionsquare/lib/loaders/mongoose";
+import spacesLoader from "@albionsquare/lib/loaders/spaces";
 
 const main = async () => {
-	await mongooseLoader();
+	await mongooseLoader.connect();
+	spacesLoader.connect();
 
     console.log("Connected");
 
-	await mongooseDisconnect();
+	await mongooseLoader.disconnect();
 };
 
 main();
