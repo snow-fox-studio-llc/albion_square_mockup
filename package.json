@@ -9,6 +9,7 @@
 		"./packages/*"
 	],
 	"scripts": {
-		"prettier": "prettier --write \"**/*.{js,ts,css,scss,html,jsx,json}\""
+		"prettier": "prettier --write \"**/*.{js,ts,css,scss,html,jsx,json}\"",
+		"build": "npm run build --workspaces --if-present"
 	}
 }
