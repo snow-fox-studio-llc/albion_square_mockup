@@ -1,5 +1,5 @@
 import { IItem } from "../schemas/item.js";
-import * as itemModel from "../models/item.js";
+import itemModel from "../models/item.js";
 
 export const find = async (filter: IItem, page: number, limit: number) => {
 	filter.hasAsset = true;
