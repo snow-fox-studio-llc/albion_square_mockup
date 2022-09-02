@@ -1,6 +1,6 @@
 {
 	"name": "albion_square",
-	"version": "1.0.0",
+	"version": "0.0.0",
 	"description": "",
 	"scripts": {
 		"prettier": "prettier --write \"**/*.{js,ts,css,scss,html,jsx,json}\"",
@@ -15,5 +15,11 @@
 	"bugs": {
 		"url": "https://github.com/snow-fox-studio-llc/albion_square/issues"
 	},
-	"homepage": "https://github.com/snow-fox-studio-llc/albion_square#readme"
+	"homepage": "https://github.com/snow-fox-studio-llc/albion_square#readme",
+	"workspaces": [
+		"packages/*"
+	],
+	"devDependencies": {
+		"lerna": "^5.5.0"
+	}
 }
