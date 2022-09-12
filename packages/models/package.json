@@ -1,3 +1,7 @@
 {
-	"name": "@as/models"
+	"name": "@as/models",
+	"exports": {
+		"./*": "./src/*.ts",
+		"./package.json": "./package.json"
+	}
 }
