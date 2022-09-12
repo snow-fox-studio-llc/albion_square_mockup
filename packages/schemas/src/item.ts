@@ -1,4 +1,4 @@
-import mongoose, { HydratedDocument } from "mongoose";
+import mongoose, { HydratedDocument, LeanDocument } from "mongoose";
 
 export interface IItem {
 	uniqueName?: string;
@@ -22,7 +22,7 @@ export interface IItem {
 	ko?: string;
 }
 
-export type IItemDoc = HydratedDocument<IItem>;
+export type IItemLeanDoc = LeanDocument<IItem>;
 
 export default new mongoose.Schema<IItem>({
 	uniqueName: {
