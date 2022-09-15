@@ -1,5 +1,6 @@
 import { model } from "mongoose";
 import itemSchema, { IItem, IItemLeanDoc } from "@as/schemas/item";
+import { PaginatedOutput } from "../lib/types";
 
 const Item = model<IItem>("Item", itemSchema);
 
@@ -21,8 +22,15 @@ export default {
 		filter: IItem,
 		limit: number,
 		page: number
-	): Promise<IItemLeanDoc[]> => {
-		return await Item.find(filter).limit(limit).skip(page * limit).lean().exec();;
+	): Promise<PaginatedOutput<IItemLeanDoc>> => {
+		const output: IItemLeanDoc[] = await Item.find(filter)
+			.limit(limit)
+			.skip(page * limit)
+			.lean()
+			.exec();
+		const totalHits = await Item.countDocuments(filter).lean().exec();
+		const totalPages = totalHits / limit;
+		return { output, totalHits, totalPages };
 	},
 	search: async (
 		query: string,
@@ -30,8 +38,8 @@ export default {
 		filter: IItem,
 		limit: number,
 		page: number
-	): Promise<IItemLeanDoc[]> => {
-		return await Item.aggregate()
+	): Promise<PaginatedOutput<IItemLeanDoc>> => {
+		const output = await Item.aggregate()
 			.search({
 				index: "default",
 				text: {
@@ -41,9 +49,12 @@ export default {
 				},
 			})
 			.match(filter)
+			.count("totalHits")
 			.skip(page * limit)
 			.limit(limit)
 			.exec();
+		console.log(output);
+		return { output: [], totalHits: 0, totalPages: 0 };
 	},
 	deleteGhosts: async (version: IItem["version"]): Promise<void> => {
 		await Item.deleteMany({ version: { $ne: version } });
