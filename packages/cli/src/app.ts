@@ -1,4 +1,5 @@
 import commander, { Command } from "commander";
+import checkMetaVersion from "./actions/check-meta-version";
 
 export default {
 	run: async () => {
@@ -8,8 +9,8 @@ export default {
 
 		program
 			.command("check-meta-version")
-			.description("Check for new ao-bin-dumps commit");
-		// .action(checkMetaVersionAction);
+			.description("Check for new ao-bin-dumps commit")
+			.action(checkMetaVersion);
 		program.command("adp-items").description("Create adp item collection");
 		// .action(adpItemsAction);
 		program
