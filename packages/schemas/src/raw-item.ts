@@ -1,7 +1,7 @@
 import mongoose, { HydratedDocument } from "mongoose";
 
 export interface IRawItem {
-    "@uniquename"?: string
+	"@uniquename"?: string;
 }
 
 export type IRawItemDoc = HydratedDocument<IRawItem>;

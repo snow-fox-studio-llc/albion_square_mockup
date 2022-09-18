@@ -14,10 +14,10 @@ const main = async () => {
 		secretAccessKey: process.env.SPACES_SECRET,
 	});
 
-    console.log("Running");
+	console.log("Running");
 	await app.run();
 
-    console.log("Disconnecting from MongoDB");
+	console.log("Disconnecting from MongoDB");
 	await mongoose.disconnect();
 };
 
