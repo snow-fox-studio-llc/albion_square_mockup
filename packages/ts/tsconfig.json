@@ -2,6 +2,7 @@
 	"extends": "@tsconfig/node16/tsconfig.json",
 	"compilerOptions": {
 		"moduleResolution": "Node16",
-		"strictNullChecks": false
+		"strictNullChecks": false,
+		"declaration": true
 	}
 }

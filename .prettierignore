@@ -10,3 +10,6 @@
 
 # custom
 **/dist/
+
+# albion_square
+dist/

@@ -1,6 +1,6 @@
 import { model } from "mongoose";
 import itemSchema, { IItem, IItemLeanDoc } from "@as/schemas/item";
-import { PaginatedOutput } from "../lib/types";
+import { PaginatedOutput } from "./types";
 
 const Item = model<IItem>("Item", itemSchema);
 

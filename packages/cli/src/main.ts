@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import mongoose from "mongoose";
 import { S3 } from "aws-sdk";
 import app from "./app";
