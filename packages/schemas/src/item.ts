@@ -1,4 +1,4 @@
-import mongoose, { HydratedDocument, LeanDocument } from "mongoose";
+import mongoose, { LeanDocument } from "mongoose";
 
 export interface IItem {
 	uniqueName?: string;
