@@ -11,6 +11,7 @@ export default new Schema<ICLIRecord>(
 		version: {
 			type: String,
 			required: true,
+			unique: true,
 		},
 	},
 	{ timestamps: true }
