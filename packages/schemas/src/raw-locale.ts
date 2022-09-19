@@ -1,13 +1,6 @@
-import mongoose, { LeanDocument } from "mongoose";
+import mongoose from "mongoose";
 
-export interface IRawItem {
-	"@tuid"?: string;
-	tuv?: any;
-}
-
-export type IRawItemLeanDoc = LeanDocument<IRawItem>;
-
-export default new mongoose.Schema<IRawItem>(
+export default new mongoose.Schema<any>(
 	{
 		"@tuid": {
 			type: String,

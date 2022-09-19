@@ -1,12 +1,6 @@
-import mongoose, { LeanDocument } from "mongoose";
+import mongoose from "mongoose";
 
-export interface IRawItem {
-	"@uniquename"?: string;
-}
-
-export type IRawItemLeanDoc = LeanDocument<IRawItem>;
-
-export default new mongoose.Schema<IRawItem>(
+export default new mongoose.Schema<any>(
 	{
 		"@uniquename": {
 			type: String,
