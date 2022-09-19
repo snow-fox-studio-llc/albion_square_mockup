@@ -1,5 +1,6 @@
 import commander, { Command } from "commander";
 import checkMetaVersion from "./actions/check-meta-version";
+import populateRawItems from "./actions/populate-raw-items";
 
 export default {
 	run: async () => {
@@ -11,8 +12,10 @@ export default {
 			.command("check-meta-version")
 			.description("Check for new ao-bin-dumps commit")
 			.action(checkMetaVersion);
-		program.command("adp-items").description("Create adp item collection");
-		// .action(adpItemsAction);
+		program
+			.command("populate-raw-items")
+			.description("Populate raw items collection")
+			.action(populateRawItems);
 		program
 			.command("adp-localization")
 			.description("Create adp localization collection");
