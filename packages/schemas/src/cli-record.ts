@@ -2,6 +2,7 @@ import { Schema, LeanDocument } from "mongoose";
 
 export interface ICLIRecord {
 	version?: string;
+	created_at?: Date;
 }
 
 export type ICLIRecordLeanDoc = LeanDocument<ICLIRecord>;
