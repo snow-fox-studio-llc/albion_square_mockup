@@ -17,7 +17,7 @@ export const getMetaVersionStatus = async (): Promise<MetaVersionStatus> => {
 
 	console.log(`Metadata commit hash: ${metaLatestCommitHash}`);
 
-	const cliRecord = await cliRecords.findVersion();
+	const cliRecord = await cliRecords.getLatestVersion();
 
 	console.log(`CLI Record: ${JSON.stringify({ version: cliRecord.version })}`);
 
