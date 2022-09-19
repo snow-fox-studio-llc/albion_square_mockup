@@ -1,10 +1,10 @@
-import mongoose, { HydratedDocument } from "mongoose";
+import mongoose, { LeanDocument } from "mongoose";
 
 export interface IRawItem {
 	"@uniquename"?: string;
 }
 
-export type IRawItemDoc = HydratedDocument<IRawItem>;
+export type IRawItemLeanDoc = LeanDocument<IRawItem>;
 
 export default new mongoose.Schema<IRawItem>(
 	{
