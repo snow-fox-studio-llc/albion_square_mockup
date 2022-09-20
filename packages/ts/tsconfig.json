@@ -3,6 +3,7 @@
 	"compilerOptions": {
 		"moduleResolution": "Node16",
 		"strictNullChecks": false,
-		"declaration": true
+		"declaration": true,
+		"composite": true
 	}
 }
