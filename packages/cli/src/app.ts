@@ -1,6 +1,7 @@
 import commander, { Command } from "commander";
 import checkMetaVersion from "./actions/check-meta-version";
 import populateRawItems from "./actions/populate-raw-items";
+import populateRawLocales from "./actions/populate-raw-locales";
 
 export default {
 	run: async () => {
@@ -17,9 +18,9 @@ export default {
 			.description("Populate raw items collection")
 			.action(populateRawItems);
 		program
-			.command("adp-localization")
-			.description("Create adp localization collection");
-		// .action(adpLocalizationAction);
+			.command("populate-raw-locales")
+			.description("Create adp localization collection")
+			.action(populateRawLocales);
 		program.command("as-items").description("Create as item collection");
 		// .action(asItemsAction);
 		program.command("as-item-assets").description("Fetch item assets");
