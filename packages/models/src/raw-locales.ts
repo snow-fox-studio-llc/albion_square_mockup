@@ -1,13 +1,16 @@
-import { model, LeanDocument } from "mongoose";
-import rawLocaleSchema from "@as/schemas/raw-locale";
+import { model } from "mongoose";
+import rawLocaleSchema, {
+	IRawLocale,
+	IRawLocaleLeanDoc,
+} from "@as/schemas/raw-locale";
 
 const RawLocale = model("RawLocale", rawLocaleSchema);
 
 export default {
-	create: async (rawLocaleObj: any): Promise<void> => {
+	create: async (rawLocaleObj: IRawLocale): Promise<void> => {
 		await RawLocale.create(rawLocaleObj);
 	},
-	getAll: async (): Promise<LeanDocument<any>[]> => {
+	getAll: async (): Promise<IRawLocaleLeanDoc[]> => {
 		return await RawLocale.find({}).lean().exec();
 	},
 	drop: async (): Promise<void> => {

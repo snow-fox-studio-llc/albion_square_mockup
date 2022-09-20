@@ -1,13 +1,13 @@
-import { model, LeanDocument } from "mongoose";
-import rawItemSchema from "@as/schemas/raw-item";
+import { model } from "mongoose";
+import rawItemSchema, { IRawItem, IRawItemLeanDoc } from "@as/schemas/raw-item";
 
 const RawItem = model("RawItem", rawItemSchema);
 
 export default {
-	create: async (rawItemObj: any): Promise<void> => {
+	create: async (rawItemObj: IRawItem): Promise<void> => {
 		await RawItem.create(rawItemObj);
 	},
-	getAll: async (): Promise<LeanDocument<any>[]> => {
+	getAll: async (): Promise<IRawItemLeanDoc[]> => {
 		return await RawItem.find({}).lean().exec();
 	},
 	drop: async (): Promise<void> => {
