@@ -6,14 +6,18 @@ export interface MetaVersionStatus {
 	updateHash?: string;
 }
 
-export const getMetaVersionStatus = async (): Promise<MetaVersionStatus> => {
-	console.log("Getting albion online metadata version");
-	const metaLatestCommitHash = (
+export const getMetaVersion = async (): Promise<string> => {
+	return (
 		await axios.get(
 			"https://api.github.com/repos/broderickhyman/ao-bin-dumps/commits/master",
 			{ responseType: "json" }
 		)
 	).data.sha;
+};
+
+export const getMetaVersionStatus = async (): Promise<MetaVersionStatus> => {
+	console.log("Getting albion online metadata version");
+	const metaLatestCommitHash = await getMetaVersion();
 
 	console.log(`Metadata commit hash: ${metaLatestCommitHash}`);
 
