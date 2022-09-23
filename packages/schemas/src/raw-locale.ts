@@ -1,11 +1,11 @@
-import mongoose, { LeanDocument } from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 export interface IRawLocale {
+	_id?: Types.ObjectId;
 	"@tuid"?: string;
 	tuv?: any;
 	[x: string]: any;
 }
-export type IRawLocaleLeanDoc = LeanDocument<IRawLocale>;
 
 export default new mongoose.Schema<IRawLocale>(
 	{

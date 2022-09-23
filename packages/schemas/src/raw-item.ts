@@ -1,11 +1,10 @@
-import mongoose, { LeanDocument } from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 export interface IRawItem {
+	_id?: Types.ObjectId;
 	"@uniquename"?: string;
 	[x: string]: any;
 }
-
-export type IRawItemLeanDoc = LeanDocument<IRawItem>;
 
 export default new mongoose.Schema<IRawItem>(
 	{

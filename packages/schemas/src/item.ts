@@ -1,6 +1,7 @@
-import mongoose, { LeanDocument } from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 export interface IItem {
+	_id?: Types.ObjectId;
 	uniqueName?: string;
 	shopCategory?: string;
 	shopSubCategory?: string;
@@ -21,8 +22,6 @@ export interface IItem {
 	zh?: string;
 	ko?: string;
 }
-
-export type IItemLeanDoc = LeanDocument<IItem>;
 
 export default new mongoose.Schema<IItem>({
 	uniqueName: {

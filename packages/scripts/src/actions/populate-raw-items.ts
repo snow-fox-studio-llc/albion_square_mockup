@@ -12,9 +12,9 @@ export default async () => {
 		)
 	).data;
 
-    console.log("Initializing empty raw items collection");
-    await rawItems.drop();
-    await rawItems.init();
+	console.log("Initializing empty raw items collection");
+	await rawItems.drop();
+	await rawItems.init();
 
 	console.log("Bulding adp-items collection");
 	const itemKeys = Object.keys(itemsJson.items);

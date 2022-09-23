@@ -1,11 +1,10 @@
-import { Schema, LeanDocument } from "mongoose";
+import { Schema, Types } from "mongoose";
 
 export interface ICLIRecord {
+	_id?: Types.ObjectId;
 	version?: string;
 	created_at?: Date;
 }
-
-export type ICLIRecordLeanDoc = LeanDocument<ICLIRecord>;
 
 export default new Schema<ICLIRecord>(
 	{

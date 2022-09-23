@@ -11,8 +11,8 @@ export default async () => {
 	).data;
 
 	console.log("Initializing empty raw locales collection");
-    await rawLocales.drop();
-    await rawLocales.init();
+	await rawLocales.drop();
+	await rawLocales.init();
 
 	console.log("Building adp-localization collection");
 	for (const entry of localizationJson.tmx.body.tu) {

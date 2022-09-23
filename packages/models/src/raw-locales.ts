@@ -1,9 +1,5 @@
 import { model } from "mongoose";
-import rawLocaleSchema, {
-	IRawLocale,
-	IRawLocaleLeanDoc,
-} from "@as/schemas/raw-locale";
-import { IRawItem } from "@as/schemas/raw-item";
+import rawLocaleSchema, { IRawLocale } from "@as/schemas/raw-locale";
 
 const RawLocale = model("RawLocale", rawLocaleSchema);
 
@@ -11,7 +7,7 @@ export default {
 	create: async (rawLocaleObj: IRawLocale): Promise<void> => {
 		await RawLocale.create(rawLocaleObj);
 	},
-	findItemLocale: async (uniqueName: string): Promise<IRawLocaleLeanDoc> => {
+	findItemLocale: async (uniqueName: string): Promise<IRawLocale> => {
 		return await RawLocale.findOne({ "@tuid": `@ITEMS_${uniqueName}` })
 			.lean()
 			.exec();

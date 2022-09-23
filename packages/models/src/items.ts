@@ -1,5 +1,5 @@
 import { model } from "mongoose";
-import itemSchema, { IItem, IItemLeanDoc } from "@as/schemas/item";
+import itemSchema, { IItem } from "@as/schemas/item";
 import { PaginatedOutput } from "./types";
 
 const Item = model<IItem>("Item", itemSchema);
@@ -15,15 +15,15 @@ export default {
 
 		await Item.findOneAndUpdate(filter, item, { upsert: true }).exec();
 	},
-	findOne: async (filter: IItem): Promise<IItemLeanDoc> => {
+	findOne: async (filter: IItem): Promise<IItem> => {
 		return await Item.findOne(filter).lean().exec();
 	},
 	find: async (
 		filter: IItem,
 		limit: number,
 		page: number
-	): Promise<PaginatedOutput<IItemLeanDoc>> => {
-		const output: IItemLeanDoc[] = await Item.find(filter)
+	): Promise<PaginatedOutput<IItem>> => {
+		const output: IItem[] = await Item.find(filter)
 			.limit(limit)
 			.skip(page * limit)
 			.lean()
@@ -38,7 +38,7 @@ export default {
 		filter: IItem,
 		limit: number,
 		page: number
-	): Promise<PaginatedOutput<IItemLeanDoc>> => {
+	): Promise<PaginatedOutput<IItem>> => {
 		const output = await Item.aggregate()
 			.search({
 				index: "default",
