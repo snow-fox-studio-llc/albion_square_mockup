@@ -1,9 +1,9 @@
 {
-	"name": "@as/cli",
+	"name": "@as/scripts",
 	"scripts": {
 		"build": "tsc --build"
 	},
 	"bin": {
-		"albionsquare": "./dist/main.js"
+		"as-scripts": "./dist/main.js"
 	}
 }
