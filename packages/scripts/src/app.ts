@@ -1,8 +1,8 @@
 import commander, { Command } from "commander";
 
 import checkMetaVersion from "./actions/check-meta-version";
-import populateRawItems from "./actions/populate-adp-items";
-import populateRawLocales from "./actions/populate-adp-locales";
+import populateADPItems from "./actions/populate-adp-items";
+import populateADPLocales from "./actions/populate-adp-locales";
 import populateItems from "./actions/populate-items";
 
 export default {
@@ -16,13 +16,13 @@ export default {
 			.description("Check for new ao-bin-dumps commit")
 			.action(checkMetaVersion);
 		program
-			.command("populate-raw-items")
-			.description("Populate raw item collection")
-			.action(populateRawItems);
+			.command("populate-adp-items")
+			.description("Populate adp item collection")
+			.action(populateADPItems);
 		program
-			.command("populate-raw-locales")
-			.description("Populate raw locale collection")
-			.action(populateRawLocales);
+			.command("populate-adp-locales")
+			.description("Populate adp locale collection")
+			.action(populateADPLocales);
 		program
 			.command("populate-items")
 			.description("Populate item collection")
