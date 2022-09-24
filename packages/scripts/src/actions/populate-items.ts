@@ -7,11 +7,11 @@ import extractLocalizedValues from "../utils/extract-localized-values";
 import { metaVersionStatus } from "./check-meta-version";
 
 export default async () => {
-	console.log("Getting albion online metadata version");
 	const metaVersion: string = await metaVersionStatus.getLatestVersion();
 
 	console.log("Building item collection");
 	const itemDocs = await adpItems.getAll();
+
 	for (const item of itemDocs) {
 		const uniqueName = item["@uniquename"];
 		const shopCategory = item["@shopcategory"];
@@ -21,23 +21,23 @@ export default async () => {
 
 		const localization = await adpLocales.findItemLocale(uniqueName);
 
-		const availableEnchantments = [];
+		const enchantments = [];
 
 		if ("enchantments" in item) {
-			availableEnchantments.push(0);
+			enchantments.push(0);
 			await iterateArrayOrObj(
 				item.enchantments.enchantment,
 				async (enchantment) => {
-					availableEnchantments.push(Number(enchantment["@enchantmentlevel"]));
+					enchantments.push(Number(enchantment["@enchantmentlevel"]));
 				}
 			);
 		} else if ("@enchantmentlevel" in item) {
-			availableEnchantments.push(Number(item["@enchantmentlevel"]));
+			enchantments.push(Number(item["@enchantmentlevel"]));
 		} else {
-			availableEnchantments.push(0);
+			enchantments.push(0);
 		}
 
-		for (const enchantment of availableEnchantments) {
+		for (const enchantment of enchantments) {
 			for (let quality = 1; quality <= maxQuality; ++quality) {
 				try {
 					await items.upsert({
@@ -48,7 +48,7 @@ export default async () => {
 						tier,
 						enchantment,
 						quality,
-						enchantments: availableEnchantments,
+						enchantments,
 						maxQuality,
 						...extractLocalizedValues(localization.tuv),
 					});
