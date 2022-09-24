@@ -1,12 +1,12 @@
 import { Schema, Types } from "mongoose";
 
-export interface ICLIRecord {
+export interface IMetaVersionLog {
 	_id?: Types.ObjectId;
 	version?: string;
 	created_at?: Date;
 }
 
-export default new Schema<ICLIRecord>(
+export default new Schema<IMetaVersionLog>(
 	{
 		version: {
 			type: String,

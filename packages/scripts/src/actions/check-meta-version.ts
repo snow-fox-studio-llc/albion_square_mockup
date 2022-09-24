@@ -1,5 +1,5 @@
 import axios from "axios";
-import cliRecords from "@as/models/cli-records";
+import metaVersionLogs from "@as/models/meta-version-logs";
 
 export interface MetaVersionStatus {
 	upToDate: boolean;
@@ -21,7 +21,7 @@ export const getMetaVersionStatus = async (): Promise<MetaVersionStatus> => {
 
 	console.log(`Metadata commit hash: ${metaLatestCommitHash}`);
 
-	const cliRecord = await cliRecords.getLatestVersion();
+	const cliRecord = await metaVersionLogs.getLatestVersion();
 
 	console.log(`CLI Record: ${JSON.stringify({ version: cliRecord.version })}`);
 
