@@ -1,7 +1,7 @@
 {
 	"name": "@as/scripts",
 	"scripts": {
-		"build": "tsc --build"
+		"build": "tsc --build --clean"
 	},
 	"bin": {
 		"as-scripts": "./dist/main.js"
