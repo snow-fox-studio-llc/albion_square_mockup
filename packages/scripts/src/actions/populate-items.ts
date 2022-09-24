@@ -2,8 +2,8 @@ import adpItems from "@as/models/adp-items";
 import adpLocales from "@as/models/adp-locales";
 import items from "@as/models/items";
 
-import arrayOrObjHelper from "../lib/array-or-obj-helper";
-import extractLocalizedValues from "../lib/extract-localized-values";
+import iterateArrayOrObj from "../utils/iterate-array-or-obj";
+import extractLocalizedValues from "../utils/extract-localized-values";
 import { metaVersionStatus } from "./check-meta-version";
 
 export default async () => {
@@ -25,7 +25,7 @@ export default async () => {
 
 		if ("enchantments" in item) {
 			availableEnchantments.push(0);
-			await arrayOrObjHelper(
+			await iterateArrayOrObj(
 				item.enchantments.enchantment,
 				async (enchantment) => {
 					availableEnchantments.push(Number(enchantment["@enchantmentlevel"]));

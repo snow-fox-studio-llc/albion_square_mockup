@@ -1,7 +1,7 @@
 import axios from "axios";
 import adpItems from "@as/models/adp-items";
 
-import arrayOrObjHelper from "../lib/array-or-obj-helper";
+import iterateArrayOrObj from "../utils/iterate-array-or-obj";
 
 export default async () => {
 	console.log("Fetching ao-bin-dumps/items.json");
@@ -20,7 +20,7 @@ export default async () => {
 	const itemKeys = Object.keys(itemsJson.items);
 	for (let i = 3; i < itemKeys.length; ++i) {
 		let itemValue = itemsJson.items[itemKeys[i]];
-		await arrayOrObjHelper(itemValue, async (item) => {
+		await iterateArrayOrObj(itemValue, async (item) => {
 			console.log(`@uniquename: ${item["@uniquename"]}`);
 			await adpItems.create(item);
 		});
