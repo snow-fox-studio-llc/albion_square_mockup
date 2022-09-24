@@ -1,8 +1,8 @@
 import commander, { Command } from "commander";
 
 import checkMetaVersion from "./actions/check-meta-version";
-import populateRawItems from "./actions/populate-raw-items";
-import populateRawLocales from "./actions/populate-raw-locales";
+import populateRawItems from "./actions/populate-adp-items";
+import populateRawLocales from "./actions/populate-adp-locales";
 import populateItems from "./actions/populate-items";
 
 export default {

@@ -1,12 +1,12 @@
 import mongoose, { Types } from "mongoose";
 
-export interface IRawItem {
+export interface IADPItem {
 	_id?: Types.ObjectId;
 	"@uniquename"?: string;
 	[x: string]: any;
 }
 
-export default new mongoose.Schema<IRawItem>(
+export default new mongoose.Schema<IADPItem>(
 	{
 		"@uniquename": {
 			type: String,

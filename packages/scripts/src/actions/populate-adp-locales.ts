@@ -1,5 +1,5 @@
 import axios from "axios";
-import rawLocales from "@as/models/raw-locales";
+import adpLocales from "@as/models/adp-locales";
 
 export default async () => {
 	console.log("Fetching ao-bin-dumps/localization.json");
@@ -10,15 +10,15 @@ export default async () => {
 		)
 	).data;
 
-	console.log("Initializing empty raw locales collection");
-	await rawLocales.drop();
-	await rawLocales.init();
+	console.log("Initializing empty adp locales collection");
+	await adpLocales.drop();
+	await adpLocales.init();
 
 	console.log("Building adp-localization collection");
 	for (const entry of localizationJson.tmx.body.tu) {
 		if ("tuv" in entry && "@tuid" in entry) {
 			console.log(`@tuid: ${entry["@tuid"]}`);
-			await rawLocales.create(entry);
+			await adpLocales.create(entry);
 		}
 	}
 };
