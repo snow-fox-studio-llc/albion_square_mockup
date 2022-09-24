@@ -1,5 +1,5 @@
-import rawItems from "@as/models/raw-items";
-import rawLocales from "@as/models/raw-locales";
+import adpItems from "@as/models/adp-items";
+import adpLocales from "@as/models/adp-locales";
 import items from "@as/models/items";
 
 import arrayOrObjHelper from "../lib/array-or-obj-helper";
@@ -11,7 +11,7 @@ export default async () => {
 	const metaVersion: string = await getMetaVersion();
 
 	console.log("Building item collection");
-	const itemDocs = await rawItems.getAll();
+	const itemDocs = await adpItems.getAll();
 	for (const item of itemDocs) {
 		const uniqueName = item["@uniquename"];
 		const shopCategory = item["@shopcategory"];
@@ -19,7 +19,7 @@ export default async () => {
 		const tier = Number(item["@tier"]);
 		const maxQuality = Number(item["@maxqualitylevel"] || "1");
 
-		const localization = await rawLocales.findItemLocale(uniqueName);
+		const localization = await adpLocales.findItemLocale(uniqueName);
 
 		const availableEnchantments = [];
 
