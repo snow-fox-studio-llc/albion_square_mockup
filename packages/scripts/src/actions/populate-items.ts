@@ -4,11 +4,11 @@ import items from "@as/models/items";
 
 import arrayOrObjHelper from "../lib/array-or-obj-helper";
 import extractLocalizedValues from "../lib/extract-localized-values";
-import { getMetaVersion } from "./check-meta-version";
+import { metaVersionStatus } from "./check-meta-version";
 
 export default async () => {
 	console.log("Getting albion online metadata version");
-	const metaVersion: string = await getMetaVersion();
+	const metaVersion: string = await metaVersionStatus.getLatestVersion();
 
 	console.log("Building item collection");
 	const itemDocs = await adpItems.getAll();
