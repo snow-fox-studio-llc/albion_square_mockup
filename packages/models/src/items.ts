@@ -32,6 +32,9 @@ export default {
 		const totalPages = totalHits / limit;
 		return { output, totalHits, totalPages };
 	},
+	findAll: async (): Promise<IItem[]> => {
+		return await Item.find({}).lean().exec();
+	},
 	search: async (
 		query: string,
 		lang: string,
