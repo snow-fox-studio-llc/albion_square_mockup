@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import mongoose from "mongoose";
-import { S3 } from "aws-sdk";
+import s3 from "@as/loaders/s3";
 import app from "./app";
 
 const main = async () => {
@@ -8,11 +8,7 @@ const main = async () => {
 	await mongoose.connect(process.env.MONGODB_URL);
 
 	console.log("Initializing Digital Ocean Space");
-	const s3 = new S3({
-		endpoint: process.env.SPACES_ENDPOINT,
-		accessKeyId: process.env.SPACES_KEY,
-		secretAccessKey: process.env.SPACES_SECRET,
-	});
+	s3.init();
 
 	console.log("Running");
 	await app.run();
