@@ -4,6 +4,7 @@ import checkMetaVersion from "./actions/check-meta-version";
 import populateADPItems from "./actions/populate-adp-items";
 import populateADPLocales from "./actions/populate-adp-locales";
 import populateItems from "./actions/populate-items";
+import scrapeItemAssets from "./actions/scrape-item-assets";
 
 export default {
 	run: async () => {
@@ -27,8 +28,10 @@ export default {
 			.command("populate-items")
 			.description("Populate item collection")
 			.action(populateItems);
-		program.command("as-item-assets").description("Fetch item assets");
-		// .action(asItemAssetsAction);
+		program
+			.command("scrape-item-assets")
+			.description("Scrape item assets from albion online wiki")
+			.action(scrapeItemAssets);
 		program
 			.command("as-marketplace")
 			.description("Compile marketplace values and localization");
