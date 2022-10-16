@@ -1,0 +1,7 @@
+{
+	"name": "@as/ts",
+	"exports": {
+		"./package.json": "./package.json",
+		"./tsconfig.json": "./tsconfig.json"
+	}
+}

@@ -1,4 +1,6 @@
+# Albion Square
 node_modules/
-web/cache/
-web/dist/
-**/.env
+dist/
+
+.env
+tsconfig.tsbuildinfo
