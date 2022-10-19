@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import PaginatedModelOutput from "#internal/paginated-model-output";
+import PaginatedResults from "#internal/paginated-results";
 
 export interface IItem {
 	_id?: Types.ObjectId;
@@ -124,7 +124,7 @@ export default {
 		filter: IItem,
 		limit: number,
 		page: number
-	): Promise<PaginatedModelOutput<IItem>> => {
+	): Promise<PaginatedResults<IItem>> => {
 		const output: IItem[] = await Item.find(filter)
 			.limit(limit)
 			.skip(page * limit)
@@ -143,7 +143,7 @@ export default {
 		filter: IItem,
 		limit: number,
 		page: number
-	): Promise<PaginatedModelOutput<IItem>> => {
+	): Promise<PaginatedResults<IItem>> => {
 		const output = await Item.aggregate()
 			.search({
 				index: "default",
