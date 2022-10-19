@@ -1,5 +1,5 @@
 import { model, Schema, Types } from "mongoose";
-import PaginatedModelOutput from "./paginated-model-output";
+import PaginatedModelOutput from "#internal/paginated-model-output";
 
 export interface IItem {
 	_id?: Types.ObjectId;

@@ -1,6 +1,6 @@
 import { S3 } from "aws-sdk";
 import sharp from "sharp";
-import { IItem } from "@as/schemas/item";
+import { IItem } from "#internal/items";
 
 class ItemAssetsModel {
 	private s3: S3;
