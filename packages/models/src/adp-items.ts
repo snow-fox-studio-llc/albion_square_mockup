@@ -18,7 +18,7 @@ const adpItemSchema = new Schema<IADPItem>(
 );
 
 
-const ADPItem = model("ADPItem", adpItemSchema);
+const ADPItem = model<IADPItem>("ADPItem", adpItemSchema);
 
 export default {
 	create: async (adpItem: IADPItem): Promise<void> => {

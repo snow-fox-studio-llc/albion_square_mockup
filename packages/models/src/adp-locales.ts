@@ -23,7 +23,7 @@ const adpLocaleSchema = new Schema<IADPLocale>(
 );
 
 
-const ADPLocale = model("ADPLocale", adpLocaleSchema);
+const ADPLocale = model<IADPLocale>("ADPLocale", adpLocaleSchema);
 
 export default {
 	create: async (adpLocale: IADPLocale): Promise<void> => {
