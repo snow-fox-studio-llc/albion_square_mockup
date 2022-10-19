@@ -22,7 +22,6 @@ const adpLocaleSchema = new Schema<IADPLocale>(
 	{ strict: false }
 );
 
-
 const ADPLocale = model<IADPLocale>("ADPLocale", adpLocaleSchema);
 
 export default {
@@ -34,35 +33,31 @@ export default {
 			.lean()
 			.exec();
 	},
-	async findShopCategoryById (id: string): Promise<IADPLocale> {
-		return await ADPLocale
-			.findOne({
-				"@tuid": `@MARKETPLACEGUI_ROLLOUT_SHOPCATEGORY_${id.toUpperCase()}`,
-			})
+	findShopCategoryById: async (id: string): Promise<IADPLocale> => {
+		return await ADPLocale.findOne({
+			"@tuid": `@MARKETPLACEGUI_ROLLOUT_SHOPCATEGORY_${id.toUpperCase()}`,
+		})
 			.lean()
 			.exec();
 	},
-	async findShopSubCategoryById(id: string): Promise<IADPLocale> {
-		return await ADPLocale
-			.findOne({
-				"@tuid": `@MARKETPLACEGUI_ROLLOUT_SHOPSUBCATEGORY_${id.toUpperCase()}`,
-			})
+	findShopSubCategoryById: async (id: string): Promise<IADPLocale> => {
+		return await ADPLocale.findOne({
+			"@tuid": `@MARKETPLACEGUI_ROLLOUT_SHOPSUBCATEGORY_${id.toUpperCase()}`,
+		})
 			.lean()
 			.exec();
 	},
-	async findItemQualityByNumber(quality: number): Promise<IADPLocale> {
-		return await ADPLocale
-			.findOne({
-				"@tuid": `@ITEMDETAILS_STATS_QUALITY_${quality}`,
-			})
+	findItemQualityByNumber: async (quality: number): Promise<IADPLocale> => {
+		return await ADPLocale.findOne({
+			"@tuid": `@ITEMDETAILS_STATS_QUALITY_${quality}`,
+		})
 			.lean()
 			.exec();
 	},
-	async findMarketplaceRollouts(): Promise<IADPLocale> {
-		return await ADPLocale
-			.find({
-				"@tuid": { $regex: /@MARKETPLACEGUI_ROLLOUT_DEFAULT/gm },
-			})
+	findMarketplaceRollouts: async (): Promise<IADPLocale> => {
+		return await ADPLocale.find({
+			"@tuid": { $regex: /@MARKETPLACEGUI_ROLLOUT_DEFAULT/gm },
+		})
 			.lean()
 			.exec();
 	},

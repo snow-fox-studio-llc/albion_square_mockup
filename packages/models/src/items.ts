@@ -24,7 +24,7 @@ export interface IItem {
 	ko?: string;
 }
 
-const itemSchema =  new Schema<IItem>({
+const itemSchema = new Schema<IItem>({
 	uniqueName: {
 		type: String,
 		required: true,
@@ -103,7 +103,6 @@ const itemSchema =  new Schema<IItem>({
 	},
 });
 
-
 const Item = model<IItem>("Item", itemSchema);
 
 export default {
@@ -120,7 +119,10 @@ export default {
 	findOne: async (filter: IItem): Promise<IItem> => {
 		return await Item.findOne(filter).lean().exec();
 	},
-	find: async (
+	find: async (filter: IItem): Promise<IItem[]> => {
+		return await Item.find(filter).lean().exec();
+	},
+	findAtPage: async (
 		filter: IItem,
 		limit: number,
 		page: number
@@ -138,6 +140,26 @@ export default {
 		return await Item.find({}).lean().exec();
 	},
 	search: async (
+		query: string,
+		lang: string,
+		filter: IItem
+	): Promise<IItem[]> => {
+		const output = await Item.aggregate()
+			.search({
+				index: "default",
+				text: {
+					path: [lang],
+					query: query,
+					fuzzy: {},
+				},
+			})
+			.match(filter)
+			.count("totalHits")
+			.exec();
+		console.log(output);
+		return output;
+	},
+	searchAtPage: async (
 		query: string,
 		lang: string,
 		filter: IItem,
