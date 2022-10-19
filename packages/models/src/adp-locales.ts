@@ -1,5 +1,27 @@
-import { model } from "mongoose";
-import adpLocaleSchema, { IADPLocale } from "@as/schemas/adp-locale";
+import { model, Schema, Types } from "mongoose";
+
+export interface IADPLocale {
+	_id?: Types.ObjectId;
+	"@tuid"?: string;
+	tuv?: any;
+	[x: string]: any;
+}
+
+const adpLocaleSchema = new Schema<IADPLocale>(
+	{
+		"@tuid": {
+			type: String,
+			unique: true,
+			required: true,
+		},
+		tuv: {
+			type: Object,
+			required: true,
+		},
+	},
+	{ strict: false }
+);
+
 
 const ADPLocale = model("ADPLocale", adpLocaleSchema);
 

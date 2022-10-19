@@ -1,5 +1,22 @@
-import { model } from "mongoose";
-import adpItemSchema, { IADPItem } from "@as/schemas/adp-item";
+import { model, Types, Schema } from "mongoose";
+
+export interface IADPItem {
+	_id?: Types.ObjectId;
+	"@uniquename"?: string;
+	[x: string]: any;
+}
+
+const adpItemSchema = new Schema<IADPItem>(
+	{
+		"@uniquename": {
+			type: String,
+			unique: true,
+			required: true,
+		},
+	},
+	{ strict: false }
+);
+
 
 const ADPItem = model("ADPItem", adpItemSchema);
 
