@@ -17,5 +17,10 @@
 	},
 	"devDependencies": {
 		"@types/sharp": "^0.31.0"
+	},
+	"dependencies": {
+		"aws-sdk": "^2.1217.0",
+		"mongoose": "^6.5.4",
+		"sharp": "^0.31.0"
 	}
 }
